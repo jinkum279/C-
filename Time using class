@@ -1,0 +1,30 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+class time
+{
+	public:
+		int m,s,h,tot;
+		void convert()
+		{
+			m*=60;
+			h=h*60*60;
+			tot=s+m+h;
+		}
+};
+int main()
+{
+	time t;
+	cout<<"Enter time:"<<endl;
+	cout<<"Hours? ";
+	cin>>t.h;
+	cout<<"Minutes? ";
+	cin>>t.m;
+	cout<<"Seconds? ";
+	cin>>t.s;
+	cout << "The time is = " << setw(2) << setfill('0') << t.h << ":"
+                             << setw(2) << setfill('0') << t.m << ":"
+                             << setw(2) << setfill('0') << t.s << endl;
+    t.convert();
+    cout << "Time in total seconds: " << t.tot;
+}
